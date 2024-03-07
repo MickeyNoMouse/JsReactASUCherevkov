@@ -1,22 +1,22 @@
 import React from 'react';
-import Container from './components/Container';
-import Button from './components/Button';
+import Content from './components/Content';
 import Layuot from './components/Layout';
+import Menu from './components/Menu';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 
 function App() {
-  const handleClick = () => {
-    alert('Юлий Цезарь носил лавровый венок, чтобы скрыть начинающуюся лысину. Кто-то это вообще прочтет?');
-  };
-
+ 
   return (
     <>
-  <Layuot />
-    <Container>
-      <Button onClick={handleClick} >Кнопка. Лучше не нажимать</Button>
-    </Container>
-    </>
 
+  <Header />
+  <Layuot />
+  <Menu />
+  <Content />
+  <Footer /> 
+    </>
   );
 }
 
