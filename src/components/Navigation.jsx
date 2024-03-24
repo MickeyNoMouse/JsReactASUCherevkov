@@ -1,13 +1,14 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 function Navigation() {
     return (
-        <nav style={{color: 'aqua', fontSize: '18px'}}>
-            <ul >
-                <li><a href="/" style={{color: 'orange'}}>Главная</a></li>
-                <li><a href="/two" style={{color: 'orange', lineHeight: '1.5'}}>Другая несуществующая <br />страница</a></li>
+        <nav style={{ color: 'aqua', fontSize: '18px' }}>
+            <ul style={{ listStyleType: 'none', display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+                <li><Link to="/" style={{ color: 'orange' }}>Главная</Link></li>
+                <li><Link to="./AboutPage" style={{ color: 'orange' }}>Другая несуществующая страница</Link></li>
             </ul>
-        </nav> 
+        </nav>
     )
 };
 
