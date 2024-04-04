@@ -1,12 +1,14 @@
-import React from "react";
 import Navigation from "./Navigation";
+import React from 'react';
 
-function Layuot( ) {
-    return (
 
-        <Navigation />
-
-    );
+function Layout() {
+  return (
+    <>
+    <Navigation />
+      
+    </>
+  );
 }
 
-export default Layuot;
+export default Layout;

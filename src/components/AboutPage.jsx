@@ -1,7 +1,8 @@
 import React from 'react';
 
-function AboutPage() {
+const AboutPage = () => {
     return (
+        
         <div>
             <h2>О проекте</h2>
             <p>Описание проекта.</p>
@@ -9,4 +10,4 @@ function AboutPage() {
     );
 }
 
-export default AboutPage;
+export {AboutPage};
