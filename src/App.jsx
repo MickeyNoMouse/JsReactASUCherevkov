@@ -10,6 +10,7 @@ import { useTheme } from './components/ThemeContext';
 import './App.css';
 import { AboutPage } from './components/AboutPage';
 import { HomePage } from './components/HomePage';
+import RegistrationForm from './components/RegistrationForm';
 
 const store = createStore(rootReducer);
 
@@ -25,7 +26,8 @@ function App() {
           <Route path="/HomePage" element={<HomePage />} /> 
             <Route path="/AboutPage" element={<AboutPage />} /> 
           </Routes>
-
+          
+      <RegistrationForm />
       </Router>
       </div>
     </Provider>

@@ -8,6 +8,7 @@ function Menu() {
             <p style={{color: 'aqua'}}>Лабораторная 2</p>
             <p style={{color: 'aqua'}}>Лабораторная 3</p>
             <p style={{color: 'aqua'}}>Лабораторная 4</p>
+            <p style={{color: 'aqua'}}>Лабораторная 5</p>
         </div>
     ) 
 };
