@@ -1,11 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Provider } from 'react-redux'; 
 import rootReducer from './redux/rootReducer'; 
 import { createStore } from 'redux'; 
 
 import Layout from './components/Layout';
-
 import { useTheme } from './components/ThemeContext';
 import './App.css';
 import { AboutPage } from './components/AboutPage';
@@ -15,20 +14,20 @@ import RegistrationForm from './components/RegistrationForm';
 const store = createStore(rootReducer);
 
 function App() {
-  const { theme } = useTheme(); 
+  const { theme, toggleTheme } = useTheme(); 
+
   return (
-    
     <Provider store={store}>
-      <div key={theme} className={`App ${theme}`}>
-      <Router>
+      <div className={`App ${theme}`}>
+        <button onClick={toggleTheme} className="theme-toggle">Изменить тему</button>
+        <Router>
           <Layout />
           <Routes>
-          <Route path="/HomePage" element={<HomePage />} /> 
+            <Route path="/HomePage" element={<HomePage />} /> 
             <Route path="/AboutPage" element={<AboutPage />} /> 
           </Routes>
-          
-      <RegistrationForm />
-      </Router>
+          <RegistrationForm />
+        </Router>
       </div>
     </Provider>
   );

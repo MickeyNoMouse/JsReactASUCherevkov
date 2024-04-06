@@ -37,14 +37,18 @@
   }
 }
 
-.light {
+.App {
+  min-height: 100vh;
+  display: flex; 
+  flex-direction: column; 
+}
 
+.light {
   background-color: #ffffff;
   color: #333333;
 }
 
 .dark {
-
   background-color: #333333;
   color: #ffffff;
 }

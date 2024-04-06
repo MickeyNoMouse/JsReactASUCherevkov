@@ -8,7 +8,7 @@ import { ThemeProvider } from './components/ThemeContext';
 
 ReactDOM.render(
   <React.StrictMode>
-      <ThemeProvider> {/* Обертка App в провайдер контекста темы */}
+      <ThemeProvider> 
         <App />
       </ThemeProvider>
   </React.StrictMode>,
