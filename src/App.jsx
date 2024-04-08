@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { Provider } from 'react-redux'; 
+import { Provider, useDispatch, useSelector } from 'react-redux'; 
 import rootReducer from './redux/rootReducer'; 
-import { createStore } from 'redux'; 
+
 
 import Layout from './components/Layout';
 import { useTheme } from './components/ThemeContext';
@@ -11,15 +11,23 @@ import { AboutPage } from './components/AboutPage';
 import { HomePage } from './components/HomePage';
 import RegistrationForm from './components/RegistrationForm';
 
-const store = createStore(rootReducer);
+import { incrementCounter } from './redux/actions';
+
+
+
 
 function App() {
+  const dispatch = useDispatch();
   const { theme, toggleTheme } = useTheme(); 
-
+  
+  const c = useSelector(store=>store.counter.count);
+  console.log(c);
   return (
-    <Provider store={store}>
+    
       <div className={`App ${theme}`}>
         <button onClick={toggleTheme} className="theme-toggle">Изменить тему</button>
+        <button onClick={()=> dispatch(incrementCounter())}>кнопка</button>
+        <p>{c}</p>
         <Router>
           <Layout />
           <Routes>
@@ -27,9 +35,10 @@ function App() {
             <Route path="/AboutPage" element={<AboutPage />} /> 
           </Routes>
           <RegistrationForm />
+          
         </Router>
       </div>
-    </Provider>
+    
   );
 }
 
