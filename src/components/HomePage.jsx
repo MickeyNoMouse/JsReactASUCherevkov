@@ -6,6 +6,7 @@ import Footer from './Footer';
 
 
 const HomePage = () => {
+ 
     return (
         <>
         <Header />

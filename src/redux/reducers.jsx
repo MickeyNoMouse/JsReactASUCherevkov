@@ -1,10 +1,8 @@
-import { INCREMENT_COUNTER, DECREMENT_COUNTER } from './actions';
+import { combineReducers } from 'redux';
+import { INCREMENT_COUNTER, DECREMENT_COUNTER, SET_SEARCH } from './actions';
 
-const initialState = {
-  count: 0
-};
 
-const counterReducer = (state = initialState, action) => {
+const counterReducer = (state = { count: 0 }, action) => {
   switch (action.type) {
     case INCREMENT_COUNTER:
       return {
@@ -21,4 +19,23 @@ const counterReducer = (state = initialState, action) => {
   }
 };
 
-export default counterReducer;
+
+const searchReducer = (state = { searchResult: null }, action) => {
+  switch (action.type) {
+    case SET_SEARCH:
+      return {
+        ...state,
+        searchResult: action.payload
+      };
+    default:
+      return state;
+  }
+};
+
+
+const rootReducer = combineReducers({
+  counter: counterReducer,
+  search: searchReducer
+});
+
+export default rootReducer;
