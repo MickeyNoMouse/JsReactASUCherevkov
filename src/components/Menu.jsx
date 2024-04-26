@@ -1,15 +1,45 @@
 import React from "react";
+import { Drawer, List, ListItem, ListItemText } from '@mui/material';
 
-function Menu() {
+import FooterMenu from "./FooterMenu";
+function Menu({ open, onClose }) {
     return (
-<div className="menu" style ={{ display: 'flex', flexDirection: 'column', height: '50%', marginTop: '100px', border: '5px solid aqua', padding: '5px', width: '13%', position: 'fixed', borderRadius: '40px'}}>
-            
-            <p style={{color: 'aqua'}}>Тут содержимое меню</p>
-            <p style={{color: 'aqua'}}>Лабораторная 2</p>
-            <p style={{color: 'aqua'}}>Лабораторная 3</p>
-            <p style={{color: 'aqua'}}>Лабораторная 4</p>
-            <p style={{color: 'aqua'}}>Лабораторная 5</p>
-        </div>
-    ) 
-};
+        <Drawer
+            open={open}
+            onClose={onClose}
+            variant="temporary"
+            anchor="left"
+            sx={{
+                width: '150px', 
+                marginTop: '50px', 
+            }}
+        >
+            <List>
+                <ListItem>
+                    <ListItemText primary="Тут содержимое меню" />
+                </ListItem>
+                <ListItem button>
+                    <ListItemText primary="Лабораторная 2" />
+                </ListItem>
+                <ListItem button>
+                    <ListItemText primary="Лабораторная 3" />
+                </ListItem>
+                <ListItem button>
+                    <ListItemText primary="Лабораторная 4" />
+                </ListItem>
+                <ListItem button>
+                    <ListItemText primary="Лабораторная 5" />
+                </ListItem>
+                <ListItem button>
+                    <ListItemText primary="Лабораторная 6" />
+                </ListItem>
+                <ListItem button>
+                    <ListItemText primary="Лабораторная 7" />
+                </ListItem>
+            </List>
+            <FooterMenu />
+        </Drawer>
+    );
+}
+
 export default Menu;

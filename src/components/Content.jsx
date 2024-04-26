@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import Button from './Button';
 function Content() {
       
       const [count, setCount] = useState(0);
@@ -17,9 +17,10 @@ function Content() {
                 <h2>Пример использования useState и useEffect</h2>
             <p>Вы нажали {count} раз</p>
             
-            <button onClick={() => setCount(count + 1)}>
+            <Button onClick={() => setCount(count + 1)}>
                 Нажмите кнопку
-            </button>
+            </Button>
+            
             <p></p>
                 </div>
 

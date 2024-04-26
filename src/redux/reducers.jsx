@@ -19,7 +19,6 @@ const counterReducer = (state = { count: 0 }, action) => {
   }
 };
 
-
 const searchReducer = (state = { searchResult: null }, action) => {
   switch (action.type) {
     case SET_SEARCH:

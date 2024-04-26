@@ -1,21 +1,19 @@
 import React from "react";
+import { AppBar, Toolbar, Typography, Button, Container } from '@mui/material';
 
 function Header() {
     return (
-        <div style={{
-            display: 'flex',
-            justifyContent: 'center', 
-            textAlign: 'center'
-        }}>
-            <h1 style={{
-                fontSize: '25px',
-                color: 'Aqua',
-                margin: '0 auto', 
-                maxWidth: '80%' 
-            }}>
-                Header. Тут заголовок. Автор: Черевков Михаил aka M1ck3y, гр.4.105-2
-            </h1>
-        </div>
+        <AppBar position="static">
+            <Toolbar>
+                <Container>
+   
+                    <Typography variant="body1" component="div" sx={{ flexGrow: 1 }}>
+                       Черевков Михаил aka M1ck3y, гр.4.105-2
+                    </Typography>
+                    
+                </Container>
+            </Toolbar>
+        </AppBar>
     );
 }
 

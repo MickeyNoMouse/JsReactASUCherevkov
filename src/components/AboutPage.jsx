@@ -1,5 +1,5 @@
 import React from 'react';
-
+import NewForm from './NewForm';
 const AboutPage = () => {
     return (
         <div style={{
@@ -11,6 +11,7 @@ const AboutPage = () => {
             alignItems: 'center'}}>
             <h2>О проекте</h2>
             <p>Описание проекта.</p>
+            <NewForm />
         </div>
     );
 }
